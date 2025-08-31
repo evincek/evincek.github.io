@@ -6,7 +6,7 @@ permalink: i-want-to-know-jesus
 
 # I Want to Know Jesus
 
-## Prayer of Salvation
+## Prayer of Salvation 
 
 Dear Lord Jesus,  
 I admit that I am a sinner and need Your forgiveness. I believe that You died on the cross for my sins and rose again from the dead. I turn from my sins and invite You into my heart as my Savior and Lord. Thank You for giving me eternal life. Help me to live for You from this day forward. In Jesus' name, Amen.
