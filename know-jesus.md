@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Get Personal with Jesus Christ!
-permalink: i-want-to-know-jesus
+permalink: /i-want-to-know-jesus/
 ---
 
 # I Want to Know Jesus
