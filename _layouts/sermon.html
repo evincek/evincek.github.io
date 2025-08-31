@@ -1,0 +1,45 @@
+---
+layout: default
+---
+
+<article class="sermon">
+  <header class="sermon-header">
+    <h1>{{ page.title }}</h1>
+    <div class="sermon-meta">
+      {% if page.preacher %}<p><strong>Preacher:</strong> {{ page.preacher }}</p>{% endif %}
+      {% if page.date %}<p><strong>Date:</strong> {{ page.date | date: "%B %d, %Y" }}</p>{% endif %}
+      {% if page.scriptures %}<p><strong>Scriptures:</strong> {{ page.scriptures }}</p>{% endif %}
+    </div>
+  </header>
+
+  <div class="sermon-content">
+    {{ content }}
+  </div>
+
+  {% if page.audio %}
+    <div class="sermon-audio">
+      <audio controls>
+        <source src="{{ page.audio }}" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  {% endif %}
+
+  <nav class="post-navigation">
+    {% if page.previous.url %}
+      <a href="{{ page.previous.url | relative_url }}" class="nav-button">
+        ← {{ page.previous.title }}
+      </a>
+    {% else %}
+      <span class="nav-button disabled">← Previous</span>
+    {% endif %}
+
+    {% if page.next.url %}
+      <a href="{{ page.next.url | relative_url }}" class="nav-button">
+        {{ page.next.title }} →
+      </a>
+    {% else %}
+      <span class="nav-button disabled">Next →</span>
+    {% endif %}
+  </nav>
+</article>

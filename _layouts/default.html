@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{{ page.title }}</title>
+  {% include head.html %}
+  <!-- <link rel="stylesheet" href="../assets/css/styles.scss"> -->
+  <!-- <link rel="stylesheet" href="/_site/assets/css/styles.scss"> -->
+</head>
+<body>
+    <!-- Navigation Bar -->
+  <nav class="main-nav">
+  <div class="nav-wrapper">
+    <ul>
+      <li><a href="{{ '/' | relative_url }}">Home</a></li>
+      <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+      <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+    </ul>
+<a href="{{ '/i-want-to-know-jesus/' | relative_url }}" class="know-Jesus-link">
+      <button class="know-Jesus">I want to Know Jesus!</button>
+    </a>  </div>
+</nav>
+  {{ content }}
+
+
+  <script>
+  var refTagger = {
+    settings: {
+      bibleVersion: "ESV",  // Default to ESV; options include KJV, NIV, NKJV, etc. (see customization below)
+      tooltipStyle: "dark", // Options: "light" or "dark" for tooltip theme
+      addTooltip: true,     // Enables tooltips on hover
+      noSearchClassNames: ["no-reftag"], // Exclude elements with this class from tagging
+      socialSharing: []     // Disable social sharing buttons in tooltips (empty array)
+    }
+  };
+  (function(d, t) {
+    var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+    g.src = "//api.reftagger.com/v2/RefTagger.js";
+    s.parentNode.insertBefore(g, s);
+  }(document, "script"));
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+---
+layout: default
+---
+
+<div class="home">
+  <header class="page-header">
+    <h1>{{ site.title | default: "Praise Palace AG" }}</h1>
+    {% if site.description %}
+      <p class="site-description">{{ site.description }}</p>
+    {% endif %}
+  </header>
+
+  {% assign sermons = site.posts | where: "layout", "sermon" %}
+  {% if sermons.size > 0 %}
+    <div class="post-list">
+      {% assign date_format = site.minima.date_format | default: "%B %d, %Y" %}
+      {% for sermon in sermons limit:1 %}
+        <article class="post-preview">
+          <div class="post-preview-header">
+            <h2><a href="{{ sermon.url | relative_url }}">{{ sermon.title | escape }}</a></h2>
+            <p class="post-date">
+              <time datetime="{{ sermon.date | date: '%Y-%m-%d' }}">{{ sermon.date | date: date_format }}</time>
+            </p>
+          </div>
+          {% if sermon.excerpt %}
+            <div class="post-excerpt">
+              <small><em>{{ sermon.excerpt }}</em></small>
+            </div>
+          {% endif %}
+          {% if sermon.preacher %}
+            <p class="post-meta">
+              <strong>Preacher:</strong> {{ sermon.preacher }}
+            </p>
+          {% endif %}
+        </article>
+      {% endfor %}
+    </div>
+
+    <div class="rss-subscribe">
+      Subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a>
+    </div>
+  {% else %}
+    <p>No sermons available at this time.</p>
+  {% endif %}
+</div>
